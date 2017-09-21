@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package nyaa;
+
+message Torrent {
+    uint64 id = 1;
+    string url = 2;
+    string name = 3;
+    float published = 4;
+}
+
+message Rss {
+    uint64 id = 1;
+    string url = 2;
+}
+
+message Anime {
+    uint64 id = 1;
+    string group = 2;
+    repeated string title = 3;
+}
+
+message DB {
+    repeated Rss rss = 1;
+    repeated Anime anime = 2;
+    repeated Torrent done = 3;
+}
