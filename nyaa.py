@@ -52,7 +52,7 @@ def save_torrent(torrent: Torrent) -> None:
     torrent_content = requests.get(torrent.url).content
     with open('/tmp/anime.torrent', 'wb') as writer:
         writer.write(torrent_content)
-        shutil.move('/tmp/anime.torrent', os.path.join(path, torrent.name))
+        shutil.move('/tmp/anime.torrent', os.path.join(path, torrent.name + '.torrent'))
 
 
 def load_db() -> DB:
